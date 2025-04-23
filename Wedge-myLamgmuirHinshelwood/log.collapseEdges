@@ -1,0 +1,72 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-6aa359dae696
+Exec   : collapseEdges -overwrite
+Date   : Oct 26 2024
+Time   : 15:08:14
+Host   : "carmella-linux"
+PID    : 7976
+I/O    : uncollated
+Case   : /home/eadaymo/OpenFOAM/eadaymo-12/Z-OpenGitHub/WolfDynamicsTraining/trainingCases/Examples/Tutorials-Day3/OtherTechniques/zoneCombustion/Wedge
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 1000
+
+Reading "collapseDict"
+
+Time = 1000s
+Read faceSet indirectPatchFaces with 0 faces
+Merging:
+    edges with length less than 1e-06 meters
+    edges split by a point with edges in line to within 179 degrees
+    Minimum edge length reduction factor = -1
+
+Face collapsing is on
+    Initial face length factor = -1
+Control mesh quality = false
+Selectively disabling wanted collapses until resulting quality satisfies constraints in system/meshQualityDict
+
+
+Outer Iteration = 0
+
+    "Edge Filter Factor": min = 1e-06 av = 1e-06 max = 1e-06
+        6619 / 6619 elements used
+
+    Inner iteration = 0
+
+        Collapsing 201 small edges
+        Collapsing 0 in line edges
+            Uncollapsed edges = 0 / 6619
+
+        Collapsing 201 edges after synchronisation and PointEdgeWave
+            Number of points : 2814
+            Not visited      : 0
+            Not collapsed    : 2412
+            Collapsed        : 402
+
+        Collapsing 0 cells
+        Apply changes to the current mesh
+
+    Inner iteration = 1
+
+        Collapsing 0 small edges
+        Collapsing 0 in line edges
+
+Writing collapsed mesh to time 1000
+
+
+ExecutionTime = 0.013348 s  ClockTime = 0 s
+
+End
+

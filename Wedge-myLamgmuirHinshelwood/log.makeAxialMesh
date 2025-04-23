@@ -1,0 +1,51 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-6aa359dae696
+Exec   : makeAxialMesh -overwrite
+Date   : Oct 26 2024
+Time   : 15:08:14
+Host   : "carmella-linux"
+PID    : 7975
+I/O    : uncollated
+Case   : /home/eadaymo/OpenFOAM/eadaymo-12/Z-OpenGitHub/WolfDynamicsTraining/trainingCases/Examples/Tutorials-Day3/OtherTechniques/zoneCombustion/Wedge
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 1000
+
+Plane of the grid: (0 0 1) (0.05 0.008483371197 -2.404200979e-20)
+
+The rotation-axis: ((0 0 0) (1 0 0))
+
+Creating wedge with an opening angle of 5 degrees
+
+Projecting nodes
+Radius to axis: min = 0 max = 0.01265
+ Calculated Distance of exteriorWall to axis is 0.01266202855
+Distance of axis to patch is 0.01266202855 -> not changing the patch type
+Splitting patch frontAndBack
+
+ Copying patches 
+ Creating Patches
+ Creating Pos-patch 
+ Creating Neg-patch 
+ Changing patches
+
+Changing patch types 
+ Changing frontAndBack_pos to wedge
+ Changing frontAndBack_neg to wedge
+
+Writing mesh to time 1000
+End
+
+Now use collapseEdges to clean grid

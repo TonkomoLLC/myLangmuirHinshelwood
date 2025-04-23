@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-6aa359dae696
+Exec   : topoSet
+Date   : Oct 26 2024
+Time   : 15:08:14
+Host   : "carmella-linux"
+PID    : 7977
+I/O    : uncollated
+Case   : /home/eadaymo/OpenFOAM/eadaymo-12/Z-OpenGitHub/WolfDynamicsTraining/trainingCases/Examples/Tutorials-Day3/OtherTechniques/zoneCombustion/Wedge
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 1000
+
+Reading "topoSetDict"
+
+Time = 1000s
+    mesh not changed.
+Created cellSet porosity
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0 -7 -7) (0.5 7 7))
+    cellSet porosity now size 546
+Created cellZoneSet porosity
+    Applying source setToCellZone
+    Adding all cells from cellSet porosity ...
+    cellZoneSet porosity now size 546
+End
+

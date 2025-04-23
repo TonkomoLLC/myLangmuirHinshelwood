@@ -1,0 +1,75 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-6aa359dae696
+Exec   : blockMesh
+Date   : Oct 26 2024
+Time   : 15:08:14
+Host   : "carmella-linux"
+PID    : 7974
+I/O    : uncollated
+Case   : /home/eadaymo/OpenFOAM/eadaymo-12/Z-OpenGitHub/WolfDynamicsTraining/trainingCases/Examples/Tutorials-Day3/OtherTechniques/zoneCombustion/Wedge
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "blockMeshDict"
+
+Creating block mesh from
+    "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.0055 .. 0.0055
+        j : 0.004982781874 .. 0.0004982781874
+        k : 0.01
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.5 0 -0.005) (0.6 0.01265 0.005)
+  nPoints: 2814
+  nCells: 1200
+  nFaces: 5006
+  nInternalFaces: 2194
+----------------
+Patches
+----------------
+  patch 0 (start: 2194 size: 200) name: exteriorWall
+  patch 1 (start: 2394 size: 6) name: inlet
+  patch 2 (start: 2400 size: 6) name: outlet
+  patch 3 (start: 2406 size: 200) name: walls
+  patch 4 (start: 2606 size: 2400) name: frontAndBack
+
+End
+

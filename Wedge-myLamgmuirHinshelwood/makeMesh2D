@@ -1,0 +1,8 @@
+rm log.*
+rm -r constant/polyMesh
+blockMesh > log.blockMesh
+makeAxialMesh -overwrite > log.makeAxialMesh
+collapseEdges -overwrite > log.collapseEdges
+topoSet > log.topoSet
+checkMesh > log.checkMesh
+

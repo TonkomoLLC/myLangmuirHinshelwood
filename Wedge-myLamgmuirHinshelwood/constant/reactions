@@ -1,0 +1,79 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+Reference:
+    Bui-Pham, M. N. (1992).
+    Studies in structures of lam inar hydrocarbon flames.
+    PhD Thesis, University of California, San Diego
+
+Notes:
+    This mechanism was developed for simulating this exact counter-flow flame
+    configuration. It should not be considered general-purpose.
+
+\*---------------------------------------------------------------------------*/
+
+/*
+
+
+# Rate Equation 
+
+The rate equation for the `irreversibleLangmuirHinshelwoodReaction` is given by:
+
+$$
+\text{Rate} = \frac{A_0 \, T^{\beta_0} \, e^{-T_{a,0}/T}}{\left[\, a + A_1 \, T^{\beta_1} \, e^{-T_{a,1}/T} \, C_{\text{CH4}}^{m_1} + A_2 \, T^{\beta_2} \, e^{-T_{a,2}/T} \, C_{\text{O2}}^{m_2} \,\right]^{m_0}}
+$$
+
+Where:
+
+- $A_i$, $T_{a,i}$, $\beta_i$, and $m_i$ are the pre-exponential factors, activation temperatures, temperature exponents, and reaction orders for each term.
+- $a$ is the adsorption constant.
+- $C_{\text{CH4}}$ and $C_{\text{O2}}$ are the concentrations of methane and oxygen.
+
+---
+
+# Parameter Table
+
+| Parameter | Description | Units | Example Values |
+| :-- | :-- | :-- | :-- |
+| $A$ | Pre-exponential factors | [m³/kmol/s] | $(5.2 \times 10^{16}, 1.0 \times 10^{10}, 2.0 \times 10^8)$ |
+| $T_a$ | Activation temperatures | [K] | $(14906, 10000, 8000)$ |
+| $\beta$ | Temperature exponents | - | $(0, 0, 0)$ |
+| $m$ | Reaction orders | - | $(2, 1, 1)$ |
+| $a$ | Adsorption constant | - | $1.0$ |
+
+---
+
+# Notes
+
+- The denominator models competitive adsorption effects.
+- The `reactants` list in the reaction dictionary specifies the species order (e.g., `reactants (CH4 O2)`).
+- The arrays for `A`, `Ta`, `beta`, and `m` must contain exactly **three values** corresponding to the three terms in the rate equation.
+
+*/
+
+
+reactions
+{
+    methaneCombustion
+    {
+        type    irreversibleMyLangmuirHinshelwoodReaction;
+        reaction "CH4 + 2O2 = CO2 + 2H2O";
+        
+        reactants      (CH4 O2);  // Species names only
+        a             1.0;       // Global adsorption constant
+        
+        // 3-element arrays (MANDATORY)
+        A             (5.2e16 1e10 2e8);   // [m³/kmol/s]
+        Ta            (14906 10000 8000);  // Activation temps [K]
+        beta          (0 0 0);             // Temp exponents
+        m             (2 1 1);             // Reaction orders
+    }
+}
+
+
+
+// ************************************************************************* //
