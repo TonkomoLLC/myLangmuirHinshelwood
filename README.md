@@ -126,6 +126,10 @@ The final expression:
 return (dk0dT - k0*m_[^0]*dbdT/b)/pow(b, m_[^0]);
 ```
 
-Represents $\frac{\partial}{\partial T} \left( \frac{k_0}{b^{m_0}} \right)$, where $b$ depends on temperature through $ k_1(T)$ and $ k_2(T)$.
+Represents $\frac{\partial}{\partial T} \left( \frac{k_0}{b^{m_0}} \right)$, where $b$ depends on temperature through $k_1(T)$ and $k_2(T)$.
 
+
+# Test case
+
+See the `myLamgmuirHinshelwoodTestCase` directory for an OpenFOAM 12 example using the `irreversibleMyLangmuirHinshelwoodReaction` reaction rate.
 
