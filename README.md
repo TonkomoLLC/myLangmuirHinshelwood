@@ -126,6 +126,6 @@ The final expression:
 return (dk0dT - k0*m_[^0]*dbdT/b)/pow(b, m_[^0]);
 ```
 
-Represents \$ \frac{\partial}{\partial T} \left( \frac{k_0}{b^{m_0}} \right) \$, where \$ b \$ depends on temperature through \$ k_1(T) \$ and \$ k_2(T) \$[^2].
+Represents $\frac{\partial}{\partial T} \left( \frac{k_0}{b^{m_0}} \right)$, where $b$ depends on temperature through $ k_1(T)$ and $ k_2(T)$.
 
 
